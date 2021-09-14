@@ -42,7 +42,6 @@ const selection = (arr) => {
     let minInd = i
     for(let j=i; j<arr.length; j++){
       if(arr[j] < arr[minInd]){
-        swap = true
         minInd = j
       }
     }
@@ -99,19 +98,6 @@ const mergeSort = (arr) => {
   //recursive case is arr.length > 1
   let midpoint = Math.floor(arr.length / 2)
   return merge(mergeSort(arr.slice(0, midpoint)), mergeSort(arr.slice(midpoint)))
-}
-
-
-
-//Quicksort
-
-//INCOMPLETE
-const pivot = (arr, start=0, end=arr.length-1) => {
-  let numSmaller = 0
-  for(let i= start + 1; i < end; i++){
-    if(arr[i] > arr[start]) numSmaller++
-  }
-  return start + numSmaller
 }
 
 //Radix Sort
